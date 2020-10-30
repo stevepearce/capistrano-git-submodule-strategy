@@ -49,7 +49,7 @@ class Capistrano::Git
       end
 
       context.within_only release_path do
-        git :submodule, 'update', '--init', '--recursive'
+        git :submodule, 'update', '--init', '--recursive', '--remote'
       end
 
       unless fetch(:git_keep_meta, false)
